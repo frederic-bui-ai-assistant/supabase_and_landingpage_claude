@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutique Démo · Supabase</title>
+  <meta name="description" content="Catalogue de produits servi par une base Supabase, hébergé sur GitHub Pages.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Boutique Démo</h1>
+      <p class="tagline">Catalogue lu en direct depuis Supabase</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Rechercher un produit…" aria-label="Rechercher un produit">
+      <select id="sort" aria-label="Trier">
+        <option value="nom.asc">Nom (A → Z)</option>
+        <option value="prix.asc">Prix croissant</option>
+        <option value="prix.desc">Prix décroissant</option>
+        <option value="stock.desc">Stock décroissant</option>
+      </select>
+    </div>
+
+    <p id="status" class="status" role="status">Chargement…</p>
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <small>Site statique · données : Supabase · hébergement : GitHub Pages</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

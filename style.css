@@ -1,0 +1,114 @@
+:root {
+  --bg: #f6f7f4;
+  --surface: #ffffff;
+  --text: #1c2420;
+  --muted: #5d6a63;
+  --border: #dfe4de;
+  --accent: #1f7a5a;
+  --accent-soft: #e2f2eb;
+  --warn: #9a5b00;
+  --warn-soft: #fdf0d8;
+  --danger: #a12d2d;
+  --danger-soft: #fbe4e4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121714;
+    --surface: #1a211d;
+    --text: #e8eee9;
+    --muted: #9aa8a0;
+    --border: #2b352f;
+    --accent: #4cc79a;
+    --accent-soft: #1b3a2e;
+    --warn: #f0b95a;
+    --warn-soft: #3a2f16;
+    --danger: #f08a8a;
+    --danger-soft: #3d2020;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 28px 0 22px;
+  margin-bottom: 24px;
+}
+.site-header h1 { margin: 0; font-size: 1.75rem; letter-spacing: -0.01em; }
+.tagline { margin: 4px 0 0; color: var(--muted); }
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.toolbar input, .toolbar select {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+.toolbar input { flex: 1 1 220px; }
+.toolbar input:focus, .toolbar select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.status { color: var(--muted); margin: 0 0 16px; }
+.status.error { color: var(--danger); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.card h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.desc { margin: 0 0 16px; color: var(--muted); flex: 1; }
+
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.price { font-size: 1.25rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.badge.ok { background: var(--accent-soft); color: var(--accent); }
+.badge.low { background: var(--warn-soft); color: var(--warn); }
+.badge.out { background: var(--danger-soft); color: var(--danger); }
+
+.site-footer { margin: 40px auto 24px; color: var(--muted); }
